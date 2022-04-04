@@ -1,0 +1,13 @@
+name: Release workflow
+
+on:
+  workflow_call:
+  workflow_dispatch:
+
+jobs:
+  staging:
+    uses: nr-kkenney/testing-1234/.github/workflows/staging.yml@main
+  production:
+    uses: nr-kkenney/testing-1234/.github/workflows/production.yml@main
+  eu-production:
+    uses: nr-kkenney/testing-1234/.github/workflows/eu-production.yml@main
