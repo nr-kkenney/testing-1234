@@ -8,8 +8,8 @@ jobs:
   staging:
     uses: ./.github/workflows/reusable.test.yml
     with:
-      test-input-1: 'staging-input-1'
-      test-input-2: 'staging-input-2'
+      test-input-1: 1
+      test-input-2: true
     secrets:
       test-secret-1: 'staging-secret-1'
       test-secret-2: 'staging-secret-2'
@@ -17,8 +17,8 @@ jobs:
     needs: staging
     uses: ./.github/workflows/reusable.test.yml
     with:
-      test-input-1: 'production-input-1'
-      test-input-2: 'production-input-2'
+      test-input-1: 2
+      test-input-2: false
     secrets:
       test-secret-1: 'production-secret-1'
       test-secret-2: 'production-secret-2'
@@ -26,8 +26,8 @@ jobs:
     needs: staging
     uses: ./.github/workflows/reusable.test.yml
     with:
-      test-input-1: 'eu-production-input-1'
-      test-input-2: 'eu-production-input-2'
+      test-input-1: 3
+      test-input-2: true
     secrets:
       test-secret-1: 'eu-production-secret-1'
       test-secret-2: 'eu-production-secret-2'
