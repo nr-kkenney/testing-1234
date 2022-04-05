@@ -1,0 +1,39 @@
+name: Test
+
+on:
+  workflow_call:
+    inputs:
+      test-input-1:
+        required: true
+        type: number
+      test-input-2:
+        required: true
+        type: boolean
+        default: true
+    secrets:
+      test-secret-1:
+        required: true
+        type: string
+      test-secrets-2:
+        required: true
+        type: string
+
+jobs:
+  hello-world:
+    runs-on: ubuntu-latest
+    steps:
+      - name: input-1
+        run: |
+          echo "${{ inputs.input-1 }}"
+
+      - name: input-2
+        run: |
+          echo "${{ inputs.input-2 }}"
+
+      - name: secret-1
+        run: |
+          echo "${{ secrets.secret-1 }}"
+
+      - name: secret-2
+        run: |
+          echo "${{ secrets.secret-2 }}"

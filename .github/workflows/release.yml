@@ -6,16 +6,28 @@ on:
 
 jobs:
   staging:
-    uses: nr-kkenney/testing-1234/.github/workflows/staging.yml@main
+    uses: .github/workflows/reusable.test.yml@main
+    with:
+      test-input-1: 'staging-input-1'
+      test-input-2: 'staging-input-2'
+    secrets:
+      test-secret-1: 'staging-secret-1'
+      test-secret-2: 'staging-secret-2'
   production:
     needs: staging
-    uses: nr-kkenney/testing-1234/.github/workflows/production.yml@main
+    uses: .github/workflows/reusable.test.yml@main
+    with:
+      test-input-1: 'production-input-1'
+      test-input-2: 'production-input-2'
+    secrets:
+      test-secret-1: 'production-secret-1'
+      test-secret-2: 'production-secret-2'
   eu-production:
     needs: staging
-    uses: nr-kkenney/testing-1234/.github/workflows/eu-production.yml@main
-  test1:
-    needs: staging
-    uses: nr-kkenney/testing-1234/.github/workflows/reusable/test1.yml@main
-  test2:
-    needs: staging
-    uses: nr-kkenney/testing-1234/.github/workflows/reusable/test2.yml@main
+    uses: .github/workflows/reusable.test.yml@main
+    with:
+      test-input-1: 'eu-production-input-1'
+      test-input-2: 'eu-production-input-2'
+    secrets:
+      test-secret-1: 'eu-production-secret-1'
+      test-secret-2: 'eu-production-secret-2'
