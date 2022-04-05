@@ -13,10 +13,8 @@ on:
     secrets:
       test-secret-1:
         required: true
-        type: string
       test-secrets-2:
         required: true
-        type: string
 
 jobs:
   hello-world:
