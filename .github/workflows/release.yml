@@ -6,7 +6,7 @@ on:
 
 jobs:
   staging:
-    uses: ./.github/workflows/reusable.test.yml@main
+    uses: ./.github/workflows/reusable.test.yml
     with:
       test-input-1: 'staging-input-1'
       test-input-2: 'staging-input-2'
@@ -15,7 +15,7 @@ jobs:
       test-secret-2: 'staging-secret-2'
   production:
     needs: staging
-    uses: ./.github/workflows/reusable.test.yml@main
+    uses: ./.github/workflows/reusable.test.yml
     with:
       test-input-1: 'production-input-1'
       test-input-2: 'production-input-2'
@@ -24,7 +24,7 @@ jobs:
       test-secret-2: 'production-secret-2'
   eu-production:
     needs: staging
-    uses: ./.github/workflows/reusable.test.yml@main
+    uses: ./.github/workflows/reusable.test.yml
     with:
       test-input-1: 'eu-production-input-1'
       test-input-2: 'eu-production-input-2'
