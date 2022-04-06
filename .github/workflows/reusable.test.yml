@@ -35,3 +35,8 @@ jobs:
       - name: secret-2
         run: |
           echo "${{ secrets.test-secret-2 }}"
+
+      - name: latest
+        run: |
+          echo ${GITHUB_REPOSITORY}
+
