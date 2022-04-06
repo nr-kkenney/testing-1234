@@ -15,6 +15,20 @@ on:
         required: true
       test-secret-2:
         required: true
+  workflow_dispatch:
+    inputs:
+      test-input-1:
+        required: true
+        type: number
+      test-input-2:
+        required: true
+        type: boolean
+        default: true
+    secrets:
+      test-secret-1:
+        required: true
+      test-secret-2:
+        required: true
 
 jobs:
   hello-world:
